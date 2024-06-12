@@ -15,15 +15,16 @@ def hangman():
             clear_screen()
             if len(guess) == 1 and guess.isalpha():
                 return guess
-            print("Please enter a single alphabetical character")
+            print("Please enter a single alphabetical character\n")
             print(progress(word, guessed_letters))
+            print(f"\nAttempts left: {attempts_left}\n")
     word = words()
     guessed_letters = set()
     incorrect_guesses = set()
     attempts_left = 6
     print("\nWelcome to Hangman\n")
     print(progress(word, guessed_letters))
-    print(f"\nAttempts left: {attempts_left}")
+    print(f"\nAttempts left: {attempts_left}\n")
     while attempts_left > 0:
         guess = get_guess()
         if guess in guessed_letters or guess in incorrect_guesses:
@@ -44,7 +45,7 @@ def hangman():
             print("Congratulations, you won")
             break
     else:
-        print(f"You lost. The word was' {word}'")
+        print(f"You lost. The word was {word}")
 def play_again():
     while True:
         hangman()
