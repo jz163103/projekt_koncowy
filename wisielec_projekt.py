@@ -9,6 +9,10 @@ def words():
 def progress(word, guessed_letters):
     return " ".join([letter if letter in guessed_letters else "_" for letter in word])
 def hangman():
+    word = words()
+    guessed_letters = set()
+    incorrect_guesses = set()
+    attempts_left = 6
     def get_guess():
         while True:
             guess = input("Guess a letter: ").lower()
@@ -18,10 +22,6 @@ def hangman():
             print("Please enter a single alphabetical character\n")
             print(progress(word, guessed_letters))
             print(f"\nAttempts left: {attempts_left}\n")
-    word = words()
-    guessed_letters = set()
-    incorrect_guesses = set()
-    attempts_left = 6
     print("\nWelcome to Hangman\n")
     print(progress(word, guessed_letters))
     print(f"\nAttempts left: {attempts_left}\n")
