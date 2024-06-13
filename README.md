@@ -1,1 +1,1 @@
-Hangman game in python.
+Gra wisielec jako projekt zaliczeniowy.
